@@ -1,7 +1,0 @@
-site_name: Salary Docs
-
-pages:
-    - Home: 'index.md'
-    - About: 'about.md'
-    - User Guide:
-        - 'Writing your docs': 'user-guide/writing-your-docs.md'
