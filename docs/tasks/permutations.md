@@ -1,10 +1,7 @@
-Writing your docs
+Перестановки
 =================
 
-dsfdsf 
-dsf ds fsd f
-
-ds f
+Текст условия
 
 Please see the [about page](/about.md) to read who we are.
 
