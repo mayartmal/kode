@@ -3,4 +3,4 @@ site_name: Задачи
 pages:
     - Старт: 'index.md'
     - Задачи:
-        - 'Перестановки': 'user-guide/writing-your-docs.md'
+        - 'Перестановки': 'tasks/permutations.md'

@@ -23,7 +23,7 @@ class TestIsPermutation(unittest.TestCase):
 
     def test__not_equal_lengths_strings__returns_False(self):
         word_1 = Word('лось')
-        word_2 = Word('лось')
+        word_2 = Word('лось2')
 
         result = word_1.is_permutation(word_2)
 
