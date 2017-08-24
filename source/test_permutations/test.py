@@ -52,3 +52,22 @@ class TestIsPermutation(unittest.TestCase):
         result = word_1.is_permutation(word_2)
 
         self.assertFalse(result)
+
+
+class TestIsDifferentFrom(unittest.TestCase):
+
+    def test__equal_strings__returns_False(self):
+        word_1 = Word('лось')
+        word_2 = Word('лось')
+
+        result = word_1.is_different_from(word_2)
+
+        self.assertFalse(result)
+
+    def test__not_equal_strings__returns_True(self):
+        word_1 = Word('лось')
+        word_2 = Word('лоська')
+
+        result = word_1.is_different_from(word_2)
+
+        self.assertTrue(result)

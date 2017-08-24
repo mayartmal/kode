@@ -18,12 +18,16 @@ class Word:
         if str(self) == str(word):
             return False
 
-        for symbol in str(self):
-            if symbol not in str(word):
-                return False
+        if self.is_different_from(word):
+            return False
 
-        for symbol in str(word):
-            if symbol not in str(self):
-                return False
+        if word.is_different_from(self):
+            return False
 
         return True
+
+    def is_different_from(self, word):
+        for symbol in str(word):
+            if symbol not in str(self):
+                return True
+        return False
