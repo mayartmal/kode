@@ -1,0 +1,34 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
+            "title": "\u0421\u0442\u0430\u0440\u0442"
+        },
+        {
+            "location": "/#welcome-to-mkdocs",
+            "text": "For full documentation visit  mkdocs.org .",
+            "title": "Welcome to MkDocs"
+        },
+        {
+            "location": "/#commands",
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.",
+            "title": "Commands"
+        },
+        {
+            "location": "/#project-layout",
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.",
+            "title": "Project layout"
+        },
+        {
+            "location": "/user-guide/writing-your-docs/",
+            "text": "Writing your docs\n\n\nCupcake indexer is a snazzy new project for indexing small cakes.\n\n\n\n\nAbove: Cupcake indexer in progress\n\n\n\n\n\n\n\n\nFirst Header\n\n\nSecond Header\n\n\nThird Header\n\n\n\n\n\n\n\n\n\n\nLeft\n\n\nCenter\n\n\nRight\n\n\n\n\n\n\nLeft\n\n\nCenter\n\n\nRight\n\n\n\n\n\n\n\n\nFenced code blocks are like Standard\nMarkdown\u2019s regular code blocks, except that\nthey\u2019re not indented and instead rely on\nstart and end fence lines to delimit the\ncode block.\n\n\n\n\ndef fn():\n    pass",
+            "title": "\u041f\u0435\u0440\u0435\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0438"
+        },
+        {
+            "location": "/user-guide/writing-your-docs/#writing-your-docs",
+            "text": "Cupcake indexer is a snazzy new project for indexing small cakes.   Above: Cupcake indexer in progress     First Header  Second Header  Third Header      Left  Center  Right    Left  Center  Right     Fenced code blocks are like Standard\nMarkdown\u2019s regular code blocks, except that\nthey\u2019re not indented and instead rely on\nstart and end fence lines to delimit the\ncode block.  def fn():\n    pass",
+            "title": "Writing your docs"
+        }
+    ]
+}

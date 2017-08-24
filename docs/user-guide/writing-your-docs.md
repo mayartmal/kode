@@ -1,13 +1,6 @@
 Writing your docs
 =================
 
-dsfdsf 
-dsf ds fsd f
-
-ds f
-
-Please see the [about page](/about.md) to read who we are.
-
 
 Cupcake indexer is a snazzy new project for indexing small cakes.
 

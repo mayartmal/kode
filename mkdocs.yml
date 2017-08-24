@@ -1,7 +1,6 @@
-site_name: Salary Docs
+site_name: Задачи
 
 pages:
-    - Home: 'index.md'
-    - About: 'about.md'
-    - User Guide:
-        - 'Writing your docs': 'user-guide/writing-your-docs.md'
+    - Старт: 'index.md'
+    - Задачи:
+        - 'Перестановки': 'user-guide/writing-your-docs.md'
