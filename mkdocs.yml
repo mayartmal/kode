@@ -1,7 +1,0 @@
-site_name: Задачи
-
-pages:
-    - Home: 'index.md'
-    - About: 'about.md'
-    - Задачи:
-        - Перестановки: 'tasks/permutations.md'
