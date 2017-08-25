@@ -4,3 +4,5 @@ pages:
     - Старт: 'index.md'
     - Задачи:
         - 'Перестановки': 'tasks/permutations.md'
+
+theme: readthedocs
