@@ -1,6 +1,6 @@
 import unittest
 
-from kode.source.test_permutations.word import Word
+from kode.source.test_check_permutation.word import Word
 
 
 class TestIsPermutation(unittest.TestCase):

@@ -1,6 +1,6 @@
 import unittest
 
-from kode.source.test_replace_whitespaces.word import Word
+from kode.source.test_urlify.word import Word
 
 
 class TestWithReplacedWhitespaces(unittest.TestCase):

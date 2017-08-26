@@ -18,18 +18,52 @@
 домофон        |  False
 
 
-### Решение
-
-В каком случает строка 2 является перестановкой строки 1?
-    
-    1. Если длины строк совпадают
-    2. В строке 2 есть все символы строки 1.
-
-
 ### Тесты
 
 Напишем тесты на несколько основных случаев.
 
 ```python
+class TestIsUnique(unittest.TestCase):
+
+    def test__for_unique_chars__returns_True(self):
+        word = Word('дом')
+
+        result = word.is_unique()
+
+        self.assertTrue(result)
+
+    def test__for_repeated_chars__returns_False(self):
+        word = Word('домофон')
+
+        result = word.is_unique()
+
+        self.assertFalse(result)
+
+```
+
+
+### Код
+
+Напишем код класса Word. Одно из решений с использованием структуры данных "Множество"
+
+```python
+class Word:
+
+    def __init__(self, text):
+        self.__text = text
+
+    @property
+    def text(self):
+        return self.__text
+
+    def is_unique(self) -> bool:
+        memo = set()
+
+        for symbol in self.text:
+            if symbol in memo:
+                return False
+            memo.add(symbol)
+
+        return True
 
 ```
