@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Уникальная строка - Задачи</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u0423\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0441\u0442\u0440\u043e\u043a\u0430";
+    var mkdocs_page_input_path = "tasks/is_unique.md";
+    var mkdocs_page_url = "/tasks/is_unique/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Задачи</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Старт</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Задачи</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Уникальная строка</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">Дубликаты символов</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">Условие задачи</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">Примеры</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">Тесты</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">Код</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../check_permutation/">Перестановка строки</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../urlify/">URL-изация</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Задачи</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Задачи &raquo;</li>
+        
+      
+    
+    <li>Уникальная строка</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">Дубликаты символов</h1>
+<h3 id="_2">Условие задачи</h3>
+<p>Дана сторка.
+Определить все ли символы встречаются в строке 1 раз.</p>
+<h3 id="_3">Примеры</h3>
+<p>Напишем несколько примеров таких строк.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Первая строка</th>
+<th align="center">Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">дом</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td align="center">домофон</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">Тесты</h3>
+<p>Напишем тесты на несколько основных случаев.</p>
+<pre><code class="python">class TestIsUnique(unittest.TestCase):
+
+    def test__for_unique_chars__returns_True(self):
+        word = Word('дом')
+
+        result = word.is_unique()
+
+        self.assertTrue(result)
+
+    def test__for_repeated_chars__returns_False(self):
+        word = Word('домофон')
+
+        result = word.is_unique()
+
+        self.assertFalse(result)
+
+</code></pre>
+
+<h3 id="_5">Код</h3>
+<p>Напишем код класса Word. Одно из решений с использованием структуры данных "Множество"</p>
+<pre><code class="python">class Word:
+
+    def __init__(self, text):
+        self.__text = text
+
+    @property
+    def text(self):
+        return self.__text
+
+    def is_unique(self) -&gt; bool:
+        memo = set()
+
+        for symbol in self.text:
+            if symbol in memo:
+                return False
+            memo.add(symbol)
+
+        return True
+
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../check_permutation/" class="btn btn-neutral float-right" title="Перестановка строки">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Старт"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../check_permutation/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

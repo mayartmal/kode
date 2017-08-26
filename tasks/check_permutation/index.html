@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Перестановка строки - Задачи</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u041f\u0435\u0440\u0435\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430 \u0441\u0442\u0440\u043e\u043a\u0438";
+    var mkdocs_page_input_path = "tasks/check_permutation.md";
+    var mkdocs_page_url = "/tasks/check_permutation/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Задачи</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Старт</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Задачи</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../is_unique/">Уникальная строка</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Перестановка строки</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">Перестановки</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">Условие задачи</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">Примеры</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">Решение</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">Тесты</a></li>
+        
+            <li><a class="toctree-l4" href="#_6">Код</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../urlify/">URL-изация</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Задачи</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Задачи &raquo;</li>
+        
+      
+    
+    <li>Перестановка строки</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">Перестановки</h1>
+<h3 id="_2">Условие задачи</h3>
+<p>Даны две сторки.
+Определить является ли первая строка перестановкой второй строки.</p>
+<h3 id="_3">Примеры</h3>
+<p>Напишем несколько примеров таких строк.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Первая строка</th>
+<th align="center">Вторая строка</th>
+<th align="center">Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">лось</td>
+<td align="center">соль</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td align="center">лось</td>
+<td align="center">лось</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td align="center">лось</td>
+<td align="center">лось2</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td align="center">медвед</td>
+<td align="center">лось</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td align="center">лось</td>
+<td align="center">лоська</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">Решение</h3>
+<p>В каком случает строка 2 является перестановкой строки 1?</p>
+<pre><code>1. Если длины строк совпадают
+2. В строке 2 есть все символы строки 1.
+</code></pre>
+<p>В каком случае строка 2 не является перестановкой строки 1?</p>
+<pre><code>1. Если длины строк не совпадают
+2. Строки абсолютно равны.
+3. Если в строке 1 есть хотя бы один символ, которого нет в строке 2.
+</code></pre>
+<h3 id="_5">Тесты</h3>
+<p>Напишем тесты на несколько основных случаев.</p>
+<pre><code class="python">class TestIsPermutation(unittest.TestCase):
+
+    def test__mixed_strings__returns_True(self):
+        &quot;&quot;&quot;
+            Вторая строка является перестановкой первой строки
+        &quot;&quot;&quot;
+        word_1 = Word('лось')
+        word_2 = Word('соль')
+
+        result = word_1.is_permutation(word_2)
+
+        self.assertTrue(result)
+
+    def test__equal_strings__returns_False(self):
+        &quot;&quot;&quot;
+            Две равные строки не являются перестановками 
+        &quot;&quot;&quot;
+        word_1 = Word('лось')
+        word_2 = Word('лось')
+
+        result = word_1.is_permutation(word_2)
+
+        self.assertFalse(result)
+
+    def test__not_equal_lengths_strings__returns_False(self):
+        &quot;&quot;&quot;
+            Строки разной длины не являютсся перестановками
+        &quot;&quot;&quot;
+        word_1 = Word('лось')
+        word_2 = Word('лось2')
+
+        result = word_1.is_permutation(word_2)
+
+        self.assertFalse(result)
+
+    def test__empty_strings__returns_False(self):
+        &quot;&quot;&quot;
+            Две пустые строки не являются перестановками 
+        &quot;&quot;&quot;
+        word_1 = Word('')
+        word_2 = Word('')
+
+        result = word_1.is_permutation(word_2)
+
+        self.assertFalse(result)
+
+    def test__different_strings__returns_False(self):
+        &quot;&quot;&quot;
+            Строки с разными символами не являются перестановками 
+        &quot;&quot;&quot;
+        word_1 = Word('медвед')
+        word_2 = Word('лось')
+
+        result = word_1.is_permutation(word_2)
+
+        self.assertFalse(result)
+
+    def test__same_strings__returns_False(self):
+        &quot;&quot;&quot;
+            Строки, которые частично совпадают  
+        &quot;&quot;&quot;
+        word_1 = Word('лось')
+        word_2 = Word('лоська')
+
+        result = word_1.is_permutation(word_2)
+
+        self.assertFalse(result)
+
+</code></pre>
+
+<p>Напишем тесты для определения того, что строки являются отличными друг от друга</p>
+<pre><code class="python">class TestIsDifferentFrom(unittest.TestCase):
+
+    def test__equal_strings__returns_False(self):
+        &quot;&quot;&quot;
+            Строки не отличаются  
+        &quot;&quot;&quot;
+        word_1 = Word('лось')
+        word_2 = Word('лось')
+
+        result = word_1.is_different_from(word_2)
+
+        self.assertFalse(result)
+
+    def test__not_equal_strings__returns_True(self):
+        &quot;&quot;&quot;
+            Строки отличаются  
+        &quot;&quot;&quot;
+        word_1 = Word('лось')
+        word_2 = Word('лоська')
+
+        result = word_1.is_different_from(word_2)
+
+        self.assertTrue(result)
+
+</code></pre>
+
+<h3 id="_6">Код</h3>
+<p>Напишем код класса Word. Метод is_permutation  использует сторожевые условия для того, чтобы сразу вернуть результат.</p>
+<pre><code class="python">class Word:
+
+    def __init__(self, text: str):
+        self.__text = text
+
+    def __str__(self):
+        return self.__text
+
+    def is_permutation(self, word) -&gt; bool:
+        if not str(self) or not str(word):
+            return False
+
+        if len(str(self)) != len(str(word)):
+            return False
+
+        if str(self) == str(word):
+            return False
+
+        if self.is_different_from(word):
+            return False
+
+        if word.is_different_from(self):
+            return False
+
+        return True
+
+    def is_different_from(self, word):
+        for symbol in str(word):
+            if symbol not in str(self):
+                return True
+        return False
+
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../urlify/" class="btn btn-neutral float-right" title="URL-изация">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../is_unique/" class="btn btn-neutral" title="Уникальная строка"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../is_unique/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../urlify/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

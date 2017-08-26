@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-08-24</lastmod>
+     <lastmod>2017-08-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,8 +12,20 @@
     
         
     <url>
-     <loc>/user-guide/writing-your-docs/</loc>
-     <lastmod>2017-08-24</lastmod>
+     <loc>/tasks/is_unique/</loc>
+     <lastmod>2017-08-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tasks/check_permutation/</loc>
+     <lastmod>2017-08-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tasks/urlify/</loc>
+     <lastmod>2017-08-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

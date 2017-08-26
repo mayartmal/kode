@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>URL-изация - Задачи</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "URL-\u0438\u0437\u0430\u0446\u0438\u044f";
+    var mkdocs_page_input_path = "tasks/urlify.md";
+    var mkdocs_page_url = "/tasks/urlify/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Задачи</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Старт</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Задачи</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../is_unique/">Уникальная строка</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../check_permutation/">Перестановка строки</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">URL-изация</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">Замена пробела специальным символом</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">Условие задачи</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">Решение</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">Тесты</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">Код</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Задачи</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Задачи &raquo;</li>
+        
+      
+    
+    <li>URL-изация</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">Замена пробела специальным символом</h1>
+<h3 id="_2">Условие задачи</h3>
+<p>Дана сторка с пробелами.
+Заменить символом %20 все пробелы, 
+которые следуют по одному или друг за другом.</p>
+<h3 id="_3">Решение</h3>
+<p>Напишем алгоритм.</p>
+<pre><code>Для всех символов в строке {
+    Читаем тикущий символ
+    Это пробел? {
+        Уже был пробел? {
+            Переходим к следующему символу
+        }
+        Копируем %20 в результирующую строку
+        Переходим к следующему символу
+    }
+    Копируем текущий символ в результирующую строку
+}
+</code></pre>
+<h3 id="_4">Тесты</h3>
+<p>Напишем тесты на несколько основных случаев.</p>
+<pre><code class="python">class TestWithReplacedWhitespaces(unittest.TestCase):
+
+    def test__one_whitespace__returns_one_replaced_sequence(self):
+        &quot;&quot;&quot;
+            Заменим одиночный пробел одним символом %20 
+        &quot;&quot;&quot;
+        expected = Word('%20')
+        word = Word(' ')
+
+        result = word.with_replaced_whitespaces()
+
+        self.assertEquals(expected, result)
+
+    def test__one_symbol_between_whitespaces__returns_one_symbol_between_replaced_sequence(self):
+        &quot;&quot;&quot;
+            Заменим два пробела по краям строки одним символом %20 
+        &quot;&quot;&quot;
+        expected = Word('%20X%20')
+        word = Word(' X ')
+
+        result = word.with_replaced_whitespaces()
+
+        self.assertEquals(expected, result)
+
+    def test__one_whitespace_between_symbols__returns_one_replaced_sequence_between_symbols(self):
+        &quot;&quot;&quot;
+            Заменим один пробел между символами 
+        &quot;&quot;&quot;
+        expected = Word('X%20X')
+        word = Word('X X')
+
+        result = word.with_replaced_whitespaces()
+
+        self.assertEquals(expected, result)
+
+    def test__space_after_space__returns_replaced_sequence_after_replaced_sequencce(self):
+        &quot;&quot;&quot;
+            Заменим несколько пробелов, следующих друг за другом 
+        &quot;&quot;&quot;
+        expected = Word('X%20%20X')
+        word = Word('X  X')
+
+        result = word.with_replaced_whitespaces()
+
+        self.assertEquals(expected, result)
+</code></pre>
+
+<h3 id="_5">Код</h3>
+<p>Напишем код класса Word</p>
+<pre><code class="python">
+
+
+class Word:
+
+    def __init__(self, text: str):
+        self.__text = text
+
+    @property
+    def text(self):
+        return self.__text
+
+    def __repr__(self):
+        return '&quot;{}&quot;'.format(self.text)
+
+    def __eq__(self, other):
+        return bool(self.text == other.text)
+
+    def with_replaced_whitespaces(self):
+        result_str = ''
+        replaced_sequence = '%20'
+        is_previous_symbol_space = False
+
+        for symbol in self.text:
+            if symbol == ' ':
+                if is_previous_symbol_space:
+                    continue
+                result_str += replaced_sequence
+                continue
+            result_str += symbol
+
+        return Word(result_str)
+
+
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../check_permutation/" class="btn btn-neutral" title="Перестановка строки"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../check_permutation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>
