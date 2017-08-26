@@ -3,6 +3,8 @@ site_name: Задачи
 pages:
     - Старт: 'index.md'
     - Задачи:
-        - 'Перестановки': 'tasks/permutations.md'
+        - 'Уникальная строка': 'tasks/is_unique.md'
+        - 'Перестановка строки': 'tasks/check_permutation.md'
+        - 'URL-изация': 'tasks/urlify.md'
 
 theme: readthedocs
