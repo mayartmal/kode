@@ -17,3 +17,6 @@ class Vector:
 
     def __abs__(self):
         return hypot(self.__x, self.__y)
+
+    def __repr__(self):
+        return 'Vector({0}, {1})'.format(self.x, self.y)
