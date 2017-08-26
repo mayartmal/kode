@@ -23,6 +23,11 @@
     >>> abs(vector)
     5.0
 
+
+Умножение вектора на число:
+    >>> vector = Vector(3, 4)
+    
+
 """
 
 from kode.source.test_vector.vector import Vector
